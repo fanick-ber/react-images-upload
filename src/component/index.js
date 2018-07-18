@@ -16,7 +16,7 @@ class ReactImageUploadComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pictures: [],
+      pictures: this.props.defaultImage ? [this.props.defaultImage] : [],
       files: [],
       notAcceptedFileType: [],
       notAcceptedFileSize: []
@@ -34,17 +34,8 @@ class ReactImageUploadComponent extends React.Component {
   }
 
   /*
-   Load image at the beggining if defaultImage prop exists
-   */
-  componentWillReceiveProps(){
-    if(this.props.defaultImage){
-      this.setState({pictures: [this.props.defaultImage]});
-    }
-  }
-
-  /*
-	 Check file extension (onDropFile)
-	 */
+	Check file extension (onDropFile)
+	*/
   hasExtension(fileName) {
     const pattern = '(' + this.props.imgExtension.join('|').replace(/\./g, '\\.') + ')$';
     return new RegExp(pattern, 'i').test(fileName);
