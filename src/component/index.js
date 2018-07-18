@@ -34,7 +34,6 @@ class ReactImageUploadComponent extends React.Component {
   }
 
   /*
-<<<<<<< HEAD
 	Check file extension (onDropFile)
 	*/
   hasExtension(fileName) {
@@ -43,8 +42,6 @@ class ReactImageUploadComponent extends React.Component {
   }
 
   /*
-=======
->>>>>>> b19c0d8839ff9b79ebc61da670c7b69bf0d90c67
    Handle file validation
    */
   onDropFile(e) {
